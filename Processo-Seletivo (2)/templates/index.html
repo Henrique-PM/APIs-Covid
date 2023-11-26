@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <h1 class="text-white">Consulta de Informações Pandemia</h1>
+    </div>
+</div>
+    <div class="container-form container mt-3">
+        <form id="healthDataForm">
+          <!--  <div class='covid'>
+            <img src="{{url_for('static',filename='covid.png')}}" alt="covid"/>
+          </div> -->
+            <div class="autocomplete">
+                <input type="text" id="countryName" name="country_name" placeholder="Digite o nome do país" required style="width:500px;">
+                <button type="button" class="btn btn-primary" onclick="getHealthData()">Consultar</button>
+            </div>
+        </form>
+    </div>
+
+<div class="container mt-5">
+  <h1>Resultado dos dados das APIs</h1>
+    <div id="healthDataResult"></div>
+</div>
+
+<div class="container-news">
+    <h1>Notícias sobre COVID-19</h1>
+    <ul class="list-group">
+        {% for article in articles %}
+            <li class="list-group-item">
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-thumbnail">
+                <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script src="static/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

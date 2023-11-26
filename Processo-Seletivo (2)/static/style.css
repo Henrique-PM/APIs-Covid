@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color:rgba(0,0,0,0.8);
+    border-end-end-radius:20px;
+    border-end-start-radius:20px;
+    padding: 7px 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.container-news {
+    margin-top: 5px;
+    overflow-y: auto;
+    
+}
+.container-news img {
+  width:150px;
+  background-color:rgba(255,255,255,0.8);
+}
+.container-news li{
+  background-color:rgba(0,0,0,0.8);
+  border:2px solid white;
+  text-decoration:none
+}
+.container-form{
+  background: rgb(0,212,255);
+  background: linear-gradient(70deg, rgba(0,212,255,1) 9%, rgba(9,14,124,1) 87%, rgba(9,9,121,1) 87%, rgba(2,0,36,1) 100%);
+  padding:50px;
+  display:flex;
+  border-radius:20px;
+
+}
+.autocomplete{
+  background-color:gray;
+  margin-left:200px;
+  border-radius:20px;
+  padding:20px;
+  display:flex;
+}
+#healthDataResult{
+  background-color:#605c5c;
+  border-radius:20px;
+  padding:50px;
+  color:black;
+}
