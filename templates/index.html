@@ -14,33 +14,34 @@
         <h1 class="text-white">Consulta de Informações Pandemia</h1>
     </div>
 </div>
-    <div class="container-form container mt-3">
+    <div class="container-form container mt-4">
         <form id="healthDataForm">
-          <!--  <div class='covid'>
-            <img src="{{url_for('static',filename='covid.png')}}" alt="covid"/>
-          </div> -->
             <div class="autocomplete">
-                <input type="text" id="countryName" name="country_name" placeholder="Digite o nome do país" required style="width:500px;">
-                <button type="button" class="btn btn-primary" onclick="getHealthData()">Consultar</button>
+                <div class="pesquisa">
+                    <input type="text" id="countryName" name="country_name" placeholder="Digite o nome do país em Ingles" required style="width:500px; border: none;">
+                    <button type="button" class="btn btn-primary" onclick="getHealthData()">Consultar</button>
+                </div>
             </div>
         </form>
     </div>
 
 <div class="container mt-5">
   <h1>Resultado dos dados das APIs</h1>
-    <div id="healthDataResult"></div>
+    <div id="healthDataResult"></div> 
+    </div>
 </div>
 
-<div class="container-news">
+<div class="container-news container mt-5">
     <h1>Notícias sobre COVID-19</h1>
-    <ul class="list-group">
+    <div class="linha-1">
         {% for article in articles %}
-            <li class="list-group-item">
-                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-thumbnail">
-                <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+        <a href="{{ article.url }}" target="_blank"><div class="card_by">
+            <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
+            <p>{{ article.title }}</p>
+        </div></a>
+    {% endfor %}
+
+    </div>
 </div>
 
 <script src="static/script.js"></script>
